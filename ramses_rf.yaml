@@ -1,0 +1,18 @@
+serial_port: /dev/ttyUSB0
+schema: evohome
+disable_sending: true
+packet_log: false
+
+known_list:
+  01:087939: {}
+
+mqtt:
+  host: mqtt.local
+  port: 1883
+  username: youruser
+  password: yourpass
+  qos: 1
+  include:
+    - packet
+    - device
+    - schema

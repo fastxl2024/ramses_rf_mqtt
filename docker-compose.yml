@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  ramses_rf:
+    build: .
+    image: ghcr.io/youruser/ramses_rf:latest
+    container_name: ramses_rf_mqtt
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Amsterdam
+    volumes:
+      - ./ramses_rf.yaml:/app/ramses_rf.yaml:ro
